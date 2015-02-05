@@ -22,6 +22,7 @@ request.get {
     token = tmp[0]
     time = tmp[1]
     count = 0
+    console.log _.size citylist
     _.each citylist, (dep) ->
       _.each citylist, (arr) ->
         if dep == arr
