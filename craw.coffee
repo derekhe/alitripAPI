@@ -2,7 +2,7 @@ request = require('request').defaults(jar: true)
 md5 = require('MD5')
 moment = require('moment')
 _ = require('lodash')
-citylist = require('./citylist').data.hotCity
+citylist = _.shuffle(require('./citylist').data.hotCity)
 
 getUrl = (session, time, dep, arr, date) ->
   apiKey = '12574478'
@@ -23,6 +23,7 @@ request.get {
     time = tmp[1]
     count = 0
     console.log _.size citylist
+    startTime = moment()
     _.each citylist, (dep) ->
       _.each citylist, (arr) ->
         if dep == arr
@@ -35,10 +36,7 @@ request.get {
             jar: j
           }, (err, res, body) ->
             b = JSON.parse(body)
-            console.log count, dep.cityName, arr.cityName, date, b.ret, _.size(b.data.ow_flight)
             count++
-            return
-          return
-        return
-      return
-  return
+            speed = count / moment.duration(moment(), startTime).minutes()
+
+            console.log count, speed,  dep.cityName, arr.cityName, date, b.ret, _.size(b.data.ow_flight)
