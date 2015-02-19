@@ -1,6 +1,8 @@
 获取阿里旅行的机票信息
 ===================
 
+[![Build Status](https://travis-ci.org/derekhe/alitripAPI.svg?branch=master)](https://travis-ci.org/derekhe/alitripAPI)
+
 运行测试
 
 ```javascript
