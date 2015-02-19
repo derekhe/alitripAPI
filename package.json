@@ -1,12 +1,11 @@
 {
   "name": "alitrip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "alitrip.js",
   "author": "derekhe",
   "dependencies": {
     "MD5": "^1.2.1",
     "lodash": "^3.1.0",
-    "md5": "^1.0.0",
     "moment": "^2.9.0",
     "q": "^1.1.2",
     "request": "^2.53.0",
