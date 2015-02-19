@@ -12,6 +12,9 @@
     "request": "^2.53.0",
     "tough-cookie": "^0.12.1"
   },
+  "scripts": {
+    "test": "grunt"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/derekhe/alitripAPI.git"
