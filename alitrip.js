@@ -22,7 +22,8 @@
         var url = getUrl(token, time, departureAirportCode, arriveAirportCode, date)
         request.get({
             url: url,
-            jar: j
+            jar: j,
+            gzip: true
         }, function (err, res, body) {
             var b = JSON.parse(body);
 
@@ -33,7 +34,8 @@
 
                 request.get({
                     url: getUrl(token, time, departureAirportCode, arriveAirportCode, date),
-                    jar: j
+                    jar: j,
+                    gzip: true
                 }, function (err, res, body) {
                     b = JSON.parse(body);
                     deferred.resolve(b);
